@@ -35,45 +35,61 @@ Fastest path: fork, run one script, and let it configure the repository for you.
    python3 scripts/setup_auth.py
    ```
 
-   Follow the terminal prompts and choose a source:
-      - `strava` (OAuth flow with `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET`)
-      - `garmin` (prompts for Garmin email/password, generates `GARMIN_TOKENS_B64`, and stores `GARMIN_TOKENS_B64` + Garmin email/password secrets for fallback auth)
+   Follow the terminal prompts to choose a source and unit preference:
+      - `strava` - terminal will link to [Strava API application](https://www.strava.com/settings/api). Create an application first and set **Authorization Callback Domain** to `localhost`. The prompt will then ask for `Client ID` and `Client Secret`
+      - `garmin` - terminal prompts for Garmin email/password
       - unit preference (`US` or `Metric`)
-      - When using `strava`, setup also attempts to configure `STRAVA_SECRET_UPDATE_TOKEN` automatically from your current `gh auth` session so refresh-token rotation can self-heal in Actions.
 
-   If you choose `strava`, create a [Strava API application](https://www.strava.com/settings/api) first and set **Authorization Callback Domain** to `localhost`.
-
-   The setup may take several minutes to complete when run for the first time.  
-   If any automation step fails, the script prints steps to remedy the failed step.  
+   The setup may take several minutes to complete when run for the first time. If any automation step fails, the script prints steps to remedy the failed step.  
    Once the script succeeds, it will provide the URL for your dashboard.
 
-### Switching Sources Later
-
-You can switch between `strava` and `garmin` any time, even after initial setup.
-
-- Re-run `python3 scripts/setup_auth.py` and choose a different source (or pass `--source strava` / `--source garmin`).
-- This updates `DASHBOARD_SOURCE`, so future scheduled runs use the new source until you change it again.
-- The first sync after a source change resets provider-specific state and rebuilds from the selected source.
-- Using the workflow **Run workflow** `source` input is a one-time override for that run only (it does not permanently change `DASHBOARD_SOURCE`).
 
 ### Option 2: Manual setup (no local clone required)
 
 1. Fork this repo to your account: [Fork this repository](../../fork)
 
 2. Add `DASHBOARD_SOURCE` repo variable (repo → [Settings → Secrets and variables → Actions](../../settings/variables/actions)):
-   - `strava` or `garmin`
+   - `DASHBOARD_SOURCE` = `strava` or `garmin`
 
 3. Add source-specific GitHub secrets (repo → [Settings → Secrets and variables → Actions](../../settings/secrets/actions)):
-   - For `strava`:
-      - `STRAVA_CLIENT_ID`
-      - `STRAVA_CLIENT_SECRET`
-      - `STRAVA_REFRESH_TOKEN`
-      - Optional (for automatic rotation in Actions): `STRAVA_SECRET_UPDATE_TOKEN` (GitHub token that can update repo secrets)
-      - You can generate/update the refresh token by running `python3 scripts/setup_auth.py --source strava` locally.
-      - Strava may rotate refresh tokens; if runs start failing with auth errors, re-run setup to refresh `STRAVA_REFRESH_TOKEN`.
    - For `garmin`:
       - Preferred: `GARMIN_TOKENS_B64`
       - Fallback: `GARMIN_EMAIL` and `GARMIN_PASSWORD`
+   - For `strava`:
+      - Step 1: Create a [Strava API application](https://www.strava.com/settings/api). Set **Authorization Callback Domain** to `localhost`, then copy:
+         - `Client ID`
+         - `Client Secret`
+
+      - Step 2: Generate a **refresh token** via OAuth (the token shown on the Strava API page often does **not** work).
+         - Open this URL in your browser (replace CLIENT_ID with the Client ID value from your Strava API application page):
+
+            ```text
+            https://www.strava.com/oauth/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read,activity:read_all
+            ```
+
+         - **Note:** After approval you’ll be redirected to a `localhost` URL that won’t load. That’s expected.
+           Example redirect URL:
+
+            ```text
+            http://localhost/exchange_token?state=&code=12345&scope=read,activity:read_all
+            ```
+
+         - Copy the `code` value from the redirect URL and exchange it:
+
+            ```bash
+            curl -X POST https://www.strava.com/oauth/token \
+              -d client_id=CLIENT_ID_FROM_STRAVA_API_APP \
+              -d client_secret=CLIENT_SECRET_FROM_STRAVA_API_APP \
+              -d code=CODE_FROM_THE_REDIRECT_URL \
+              -d grant_type=authorization_code
+            ```
+
+         - Copy `refresh_token` from the response.
+
+      - Step 3: Add these secrets:
+         - `STRAVA_CLIENT_ID` = Client ID from step 1
+         - `STRAVA_CLIENT_SECRET` = Client Secret from step 1
+         - `STRAVA_REFRESH_TOKEN` = refresh token from step 2
 
 4. Enable GitHub Pages (repo → [Settings → Pages](../../settings/pages)):
    - Under **Build and deployment**, set **Source** to **GitHub Actions**.
@@ -86,36 +102,18 @@ You can switch between `strava` and `garmin` any time, even after initial setup.
 
 6. Open your live site at `https://<your-username>.github.io/<repo-name>/` after deploy finishes.
 
-### Unit Preference Precedence
-
-- Option 1 stores your unit choice in repo variables:
-  - `DASHBOARD_SOURCE`
-  - `DASHBOARD_DISTANCE_UNIT`
-  - `DASHBOARD_ELEVATION_UNIT`
-- When those variables are set, workflow runs use them and override `config.yaml` units.
-- If those variables are unset, workflow runs use `config.yaml` units (this is the default for Option 2/manual setup).
-- To switch back to `config.yaml`-only unit control, delete those two repo variables in Settings → Secrets and variables → Actions, or:
-
-  ```bash
-  gh variable delete DASHBOARD_SOURCE
-  gh variable delete DASHBOARD_DISTANCE_UNIT
-  gh variable delete DASHBOARD_ELEVATION_UNIT
-  ```
-
-Both options run the same workflow, which will:
-- restore persisted state from the `dashboard-data` branch (if present)
-- sync raw activities into `activities/raw/<source>/` (local-only; not committed)
-- normalize + merge into `data/activities_normalized.json` (persisted history)
-- aggregate into `data/daily_aggregates.json`
-- build `site/data.json`
-- commit generated outputs to `dashboard-data` (not `main`)
-
 ## Updating Your Repository
 
 - To pull in new updates and features from the original repo, use GitHub's **Sync fork** button on your fork's `main` branch.
-- Activity data is stored on a dedicated `dashboard-data` branch and deployed from there, so generated outputs do not need to be committed on `main`.
-- `main` is intentionally kept free of generated `data/` and `site/data.json` artifacts so fork sync stays cleaner.
-- After syncing, run [Sync Heatmaps](../../actions/workflows/sync.yml) if you want your dashboard refreshed immediately.
+- Activity data is stored on a dedicated `dashboard-data` branch and deployed from there
+- `main` is intentionally kept free of generated `data/` and `site/data.json` artifacts so fork sync process stays cleaner.
+- After syncing, manually run [Sync Heatmaps](../../actions/workflows/sync.yml) if you want your dashboard refreshed immediately. Otherwise updates will deploy at the next scheduled run.
+
+### Switching Sources Later
+
+You can switch between `strava` and `garmin` any time, even after initial setup.
+
+- Re-run `python3 scripts/setup_auth.py` and choose a different source (or pass `--source strava` / `--source garmin`).
 
 ## Configuration (Optional)
 
@@ -144,8 +142,8 @@ Key options:
 ## Notes
 
 - Raw activities are stored locally for processing but are not committed (`activities/raw/` is ignored). This prevents publishing detailed per-activity payloads and GPS location traces.
-- If neither `sync.start_date` nor `sync.lookback_years` is set, sync backfills all available history from the selected source.
-- A source marker (`data/source_state.json`) is persisted so switching from Strava to Garmin (or back) triggers a full reset (persisted outputs, provider backfill cursors, and local raw cache) before syncing from scratch.
-- Strava backfill state is stored in `data/backfill_state_strava.json`; Garmin backfill state is stored in `data/backfill_state_garmin.json`.
-- Manual workflow runs include a `full_backfill` toggle that clears persisted pipeline outputs and source backfill cursors before syncing.
+- If neither `sync.start_date` nor `sync.lookback_years` is set, the sync workflow backfills all available history from the selected source (i.e. Strava/Garmin).
+- Strava backfill state is stored in `data/backfill_state_strava.json`; Garmin backfill state is stored in `data/backfill_state_garmin.json`. If a backfill hits API limits (unlikely), this state allows the daily refresh automation to pick back up where it left off.
+- The Sync action workflow includes a toggle labeled `Reset backfill cursor and re-fetch full history for the selected source` which forces a one-time full backfill. This is useful if you add/delete/modify activities which have already been loaded.
 - The GitHub Pages site is optimized for responsive desktop/mobile viewing.
+- If a day contains multiple activity types, that day’s colored square is split into equal segments — one per unique activity type on that day.
