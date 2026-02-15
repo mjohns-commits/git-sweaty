@@ -734,7 +734,7 @@ def _get_pages_custom_domain(repo: str) -> Optional[str]:
         return None
 
 
-def _prompt_custom_pages_domain(repo: str) -> Optional[str]:
+def _prompt_custom_pages_domain(repo: str) -> Tuple[bool, Optional[str]]:
     existing = _get_pages_custom_domain(repo)
 
     print("\nOptional: set a custom dashboard domain (example: strava.example.com).")
@@ -746,7 +746,16 @@ def _prompt_custom_pages_domain(repo: str) -> Optional[str]:
         invalid_message="Please enter 'y' or 'n'.",
     )
     if use_custom != "yes":
-        return None
+        if existing:
+            clear_choice = _prompt_choice(
+                f"Clear existing custom domain '{existing}'? [y/n]: ",
+                {"y": "yes", "yes": "yes", "n": "no", "no": "no"},
+                default="y",
+                invalid_message="Please enter 'y' or 'n'.",
+            )
+            if clear_choice == "yes":
+                return True, None
+        return False, None
 
     while True:
         if existing:
@@ -754,7 +763,7 @@ def _prompt_custom_pages_domain(repo: str) -> Optional[str]:
                 f"Custom domain host (press Enter to keep '{existing}'): "
             ).strip()
             if not response:
-                return existing
+                return True, existing
         else:
             response = input("Custom domain host (for example strava.example.com): ").strip()
             if not response:
@@ -762,7 +771,7 @@ def _prompt_custom_pages_domain(repo: str) -> Optional[str]:
                 continue
 
         try:
-            return _normalize_pages_custom_domain(response)
+            return True, _normalize_pages_custom_domain(response)
         except ValueError as exc:
             print(f"Invalid custom domain: {exc}")
 
@@ -771,16 +780,19 @@ def _resolve_custom_pages_domain(
     args: argparse.Namespace,
     interactive: bool,
     repo: str,
-) -> Optional[str]:
+) -> Tuple[bool, Optional[str]]:
+    if bool(getattr(args, "clear_custom_domain", False)):
+        return True, None
+
     explicit = getattr(args, "custom_domain", None)
     if explicit is not None:
         explicit_text = str(explicit).strip()
         if not explicit_text:
-            return None
-        return _normalize_pages_custom_domain(explicit_text)
+            return True, None
+        return True, _normalize_pages_custom_domain(explicit_text)
 
     if not interactive:
-        return None
+        return False, None
 
     return _prompt_custom_pages_domain(repo)
 
@@ -1353,6 +1365,42 @@ def _try_set_pages_custom_domain(repo: str, domain: str) -> Tuple[bool, str]:
     return False, f"Unable to set custom domain {normalized} automatically."
 
 
+def _try_clear_pages_custom_domain(repo: str) -> Tuple[bool, str]:
+    current = _get_pages_custom_domain(repo)
+    if not current:
+        return True, "GitHub Pages custom domain is already unset."
+
+    attempts = [
+        ["gh", "api", "-X", "PUT", f"repos/{repo}/pages", "-f", "cname=", "-f", "build_type=workflow"],
+        ["gh", "api", "-X", "PUT", f"repos/{repo}/pages", "-f", "cname="],
+        ["gh", "api", "-X", "POST", f"repos/{repo}/pages", "-f", "cname=", "-f", "build_type=workflow"],
+        ["gh", "api", "-X", "POST", f"repos/{repo}/pages", "-f", "cname="],
+    ]
+    errors = []
+    for cmd in attempts:
+        result = _run(cmd, check=False)
+        if result.returncode == 0:
+            verified = _get_pages_custom_domain(repo)
+            if not verified:
+                return True, "GitHub Pages custom domain cleared."
+            return (
+                True,
+                (
+                    "Requested custom domain removal; verify Pages settings if the previous domain "
+                    f"({verified}) still appears."
+                ),
+            )
+        errors.append(_first_stderr_line(result.stderr))
+
+    final_domain = _get_pages_custom_domain(repo)
+    if not final_domain:
+        return True, "GitHub Pages custom domain cleared."
+
+    if errors:
+        return False, "; ".join(list(dict.fromkeys(errors)))
+    return False, f"Unable to clear custom domain {final_domain} automatically."
+
+
 def _try_dispatch_sync(repo: str, source: str, full_backfill: bool = False) -> Tuple[bool, str]:
     attempts: list[tuple[bool, bool]] = []
     if full_backfill:
@@ -1569,6 +1617,11 @@ def parse_args() -> argparse.Namespace:
         help="Optional custom GitHub Pages domain host (for example strava.example.com).",
     )
     parser.add_argument(
+        "--clear-custom-domain",
+        action="store_true",
+        help="Clear existing GitHub Pages custom domain during setup.",
+    )
+    parser.add_argument(
         "--no-browser",
         action="store_true",
         help="Do not auto-open browser; print auth URL only.",
@@ -1615,7 +1668,10 @@ def main() -> int:
     _assert_repo_access(repo)
     _assert_actions_secret_access(repo)
     print(f"Using repository: {repo}")
-    custom_pages_domain = None if args.no_auto_github else _resolve_custom_pages_domain(args, interactive, repo)
+    custom_domain_requested = False
+    custom_pages_domain: Optional[str] = None
+    if not args.no_auto_github:
+        custom_domain_requested, custom_pages_domain = _resolve_custom_pages_domain(args, interactive, repo)
     previous_source = _existing_dashboard_source(repo)
     source = _resolve_source(args, interactive, previous_source)
     full_backfill = False
@@ -1825,15 +1881,25 @@ def main() -> int:
             manual_help=None if pages_configured else f"Open {pages_url} and set Source to 'GitHub Actions'.",
         )
 
-        if custom_pages_domain:
-            domain_set, domain_detail = _try_set_pages_custom_domain(repo, custom_pages_domain)
-            _add_step(
-                steps,
-                name="GitHub Pages custom domain",
-                status=STATUS_OK if domain_set else STATUS_MANUAL_REQUIRED,
-                detail=domain_detail if domain_set else f"Could not configure automatically: {domain_detail}",
-                manual_help=None if domain_set else f"Open {pages_url} and set Custom domain to {custom_pages_domain}.",
-            )
+        if custom_domain_requested:
+            if custom_pages_domain:
+                domain_set, domain_detail = _try_set_pages_custom_domain(repo, custom_pages_domain)
+                _add_step(
+                    steps,
+                    name="GitHub Pages custom domain",
+                    status=STATUS_OK if domain_set else STATUS_MANUAL_REQUIRED,
+                    detail=domain_detail if domain_set else f"Could not configure automatically: {domain_detail}",
+                    manual_help=None if domain_set else f"Open {pages_url} and set Custom domain to {custom_pages_domain}.",
+                )
+            else:
+                domain_cleared, domain_detail = _try_clear_pages_custom_domain(repo)
+                _add_step(
+                    steps,
+                    name="GitHub Pages custom domain",
+                    status=STATUS_OK if domain_cleared else STATUS_MANUAL_REQUIRED,
+                    detail=domain_detail if domain_cleared else f"Could not configure automatically: {domain_detail}",
+                    manual_help=None if domain_cleared else f"Open {pages_url} and clear the Custom domain field.",
+                )
 
         dispatch_started_at = datetime.now(timezone.utc)
         dispatched, dispatch_detail = _try_dispatch_sync(

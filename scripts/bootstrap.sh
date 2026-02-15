@@ -731,15 +731,12 @@ main() {
     return 0
   fi
 
-  if prompt_yes_no "Fork the repo to your GitHub account first? (recommended unless you already have write access to another target repo)" "Y"; then
-    fork_and_clone "$upstream_repo" "$repo_dir"
-  else
-    if ! prompt_yes_no "Clone upstream directly (without forking)?" "Y"; then
-      info "No repository action selected. Exiting."
-      return 0
-    fi
-    clone_upstream "$upstream_repo" "$repo_dir"
+  if ! prompt_yes_no "Proceed with fork-based local setup? (for non-fork targets, choose online mode)" "Y"; then
+    info "Skipped local setup."
+    info "Use option 2 (online mode) if you want a non-fork target repository."
+    return 0
   fi
+  fork_and_clone "$upstream_repo" "$repo_dir"
 
   if [[ -n "$BOOTSTRAP_SELECTED_REPO_DIR" ]]; then
     repo_dir="$BOOTSTRAP_SELECTED_REPO_DIR"

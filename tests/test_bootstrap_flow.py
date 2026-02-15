@@ -398,10 +398,10 @@ exit 0
             env["FAKE_GH_LOG"] = os.path.join(tmpdir, "gh.log")
             env["FAKE_PY_LOG"] = py_log
 
-            # Mode local -> existing clone path? no -> fork? no -> clone upstream? yes -> run setup? no
+            # Mode local -> existing clone path? no -> proceed fork-based setup? yes -> custom fork name? no -> run setup? no
             proc = subprocess.run(
                 ["bash", BOOTSTRAP_PATH],
-                input="1\nn\nn\ny\nn\n",
+                input="1\nn\ny\nn\nn\n",
                 text=True,
                 capture_output=True,
                 cwd=run_dir,
@@ -415,7 +415,7 @@ exit 0
                 git_calls = f.read()
             clone_lines = [line for line in git_calls.splitlines() if line.startswith("clone ")]
             self.assertEqual(len(clone_lines), 1)
-            self.assertIn("clone https://github.com/aspain/git-sweaty.git ", clone_lines[0])
+            self.assertIn("clone https://github.com/tester/git-sweaty.git ", clone_lines[0])
             clone_target = clone_lines[0].split(" ", 2)[2]
             self.assertEqual(os.path.basename(clone_target), "git-sweaty")
             self.assertEqual(os.path.basename(os.path.dirname(clone_target)), "runner")

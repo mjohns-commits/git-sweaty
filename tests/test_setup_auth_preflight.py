@@ -260,6 +260,27 @@ class SetupAuthDispatchTests(unittest.TestCase):
         self.assertTrue(ok)
         self.assertIn("custom domain set to strava.nedevski.com", detail)
 
+    def test_try_clear_pages_custom_domain_clears_and_verifies(self) -> None:
+        responses = [
+            _completed_process(returncode=0, stdout="strava.nedevski.com\n"),
+            _completed_process(returncode=0),
+            _completed_process(returncode=0, stdout="null\n"),
+        ]
+        with mock.patch("setup_auth._run", side_effect=responses):
+            ok, detail = setup_auth._try_clear_pages_custom_domain("owner/repo")
+
+        self.assertTrue(ok)
+        self.assertIn("custom domain cleared", detail.lower())
+
+    def test_prompt_custom_pages_domain_can_request_clear_existing_domain(self) -> None:
+        with (
+            mock.patch("setup_auth._get_pages_custom_domain", return_value="strava.example.com"),
+            mock.patch("setup_auth._prompt_choice", side_effect=["no", "yes"]),
+        ):
+            requested, domain = setup_auth._prompt_custom_pages_domain("owner/repo")
+        self.assertTrue(requested)
+        self.assertIsNone(domain)
+
     def test_resolve_strava_profile_url_non_interactive_uses_existing_variable(self) -> None:
         args = Namespace(strava_profile_url=None)
         with (
@@ -386,6 +407,7 @@ class SetupAuthMainFlowTests(unittest.TestCase):
             scope="read,activity:read_all",
             strava_profile_url=None,
             custom_domain=None,
+            clear_custom_domain=False,
             no_browser=True,
             no_auto_github=False,
             no_watch=True,
@@ -405,7 +427,7 @@ class SetupAuthMainFlowTests(unittest.TestCase):
             mock.patch("setup_auth._resolve_repo_slug", return_value="owner/repo"),
             mock.patch("setup_auth._assert_repo_access"),
             mock.patch("setup_auth._assert_actions_secret_access"),
-            mock.patch("setup_auth._resolve_custom_pages_domain", return_value=None),
+            mock.patch("setup_auth._resolve_custom_pages_domain", return_value=(False, None)),
             mock.patch("setup_auth._existing_dashboard_source", return_value=previous_source),
             mock.patch("setup_auth._resolve_source", return_value=source),
             mock.patch("setup_auth._prompt_full_backfill_choice", return_value=full_backfill_prompt_result) as prompt_mock,
@@ -457,7 +479,7 @@ class SetupAuthMainFlowTests(unittest.TestCase):
             stack.enter_context(mock.patch("setup_auth._resolve_repo_slug", return_value="owner/repo"))
             stack.enter_context(mock.patch("setup_auth._assert_repo_access"))
             stack.enter_context(mock.patch("setup_auth._assert_actions_secret_access"))
-            stack.enter_context(mock.patch("setup_auth._resolve_custom_pages_domain", return_value=None))
+            stack.enter_context(mock.patch("setup_auth._resolve_custom_pages_domain", return_value=(False, None)))
             stack.enter_context(mock.patch("setup_auth._existing_dashboard_source", return_value="strava"))
             stack.enter_context(mock.patch("setup_auth._resolve_source", return_value="strava"))
             stack.enter_context(mock.patch("setup_auth._prompt_full_backfill_choice", return_value=False))
@@ -520,7 +542,7 @@ class SetupAuthMainFlowTests(unittest.TestCase):
             stack.enter_context(mock.patch("setup_auth._assert_repo_access"))
             stack.enter_context(mock.patch("setup_auth._assert_actions_secret_access"))
             stack.enter_context(
-                mock.patch("setup_auth._resolve_custom_pages_domain", return_value="strava.nedevski.com")
+                mock.patch("setup_auth._resolve_custom_pages_domain", return_value=(True, "strava.nedevski.com"))
             )
             stack.enter_context(mock.patch("setup_auth._existing_dashboard_source", return_value="strava"))
             stack.enter_context(mock.patch("setup_auth._resolve_source", return_value="strava"))
@@ -543,6 +565,7 @@ class SetupAuthMainFlowTests(unittest.TestCase):
             set_domain_mock = stack.enter_context(
                 mock.patch("setup_auth._try_set_pages_custom_domain", return_value=(True, "ok"))
             )
+            stack.enter_context(mock.patch("setup_auth._try_clear_pages_custom_domain", return_value=(True, "ok")))
             stack.enter_context(mock.patch("setup_auth._try_dispatch_sync", return_value=(True, "ok")))
             stack.enter_context(
                 mock.patch(
@@ -554,6 +577,56 @@ class SetupAuthMainFlowTests(unittest.TestCase):
 
         self.assertEqual(result, 0)
         set_domain_mock.assert_called_once_with("owner/repo", "strava.nedevski.com")
+
+    def test_main_clears_custom_pages_domain_when_requested(self) -> None:
+        args = self._default_args()
+        args.client_id = "client-id"
+        args.client_secret = "client-secret"
+
+        with ExitStack() as stack:
+            stack.enter_context(mock.patch("setup_auth.parse_args", return_value=args))
+            stack.enter_context(mock.patch("setup_auth._bootstrap_env_and_reexec"))
+            stack.enter_context(mock.patch("setup_auth._isatty", return_value=True))
+            stack.enter_context(mock.patch("setup_auth._assert_gh_ready"))
+            stack.enter_context(mock.patch("setup_auth._resolve_repo_slug", return_value="owner/repo"))
+            stack.enter_context(mock.patch("setup_auth._assert_repo_access"))
+            stack.enter_context(mock.patch("setup_auth._assert_actions_secret_access"))
+            stack.enter_context(
+                mock.patch("setup_auth._resolve_custom_pages_domain", return_value=(True, None))
+            )
+            stack.enter_context(mock.patch("setup_auth._existing_dashboard_source", return_value="strava"))
+            stack.enter_context(mock.patch("setup_auth._resolve_source", return_value="strava"))
+            stack.enter_context(mock.patch("setup_auth._prompt_full_backfill_choice", return_value=False))
+            stack.enter_context(mock.patch("setup_auth._resolve_units", return_value=("mi", "ft")))
+            stack.enter_context(mock.patch("setup_auth._authorize_and_get_code", return_value="auth-code"))
+            stack.enter_context(
+                mock.patch(
+                    "setup_auth._exchange_code_for_tokens",
+                    return_value={"refresh_token": "refresh-token", "athlete": {}},
+                )
+            )
+            stack.enter_context(mock.patch("setup_auth._set_secret"))
+            stack.enter_context(mock.patch("setup_auth._try_set_strava_secret_update_token", return_value=(True, "ok")))
+            stack.enter_context(mock.patch("setup_auth._resolve_strava_profile_url", return_value=""))
+            stack.enter_context(mock.patch("setup_auth._set_variable"))
+            stack.enter_context(mock.patch("setup_auth._try_enable_actions_permissions", return_value=(True, "ok")))
+            stack.enter_context(mock.patch("setup_auth._try_enable_workflows", return_value=(True, "ok")))
+            stack.enter_context(mock.patch("setup_auth._try_configure_pages", return_value=(True, "ok")))
+            stack.enter_context(mock.patch("setup_auth._try_set_pages_custom_domain", return_value=(True, "ok")))
+            clear_domain_mock = stack.enter_context(
+                mock.patch("setup_auth._try_clear_pages_custom_domain", return_value=(True, "ok"))
+            )
+            stack.enter_context(mock.patch("setup_auth._try_dispatch_sync", return_value=(True, "ok")))
+            stack.enter_context(
+                mock.patch(
+                    "setup_auth._find_latest_workflow_run",
+                    return_value=(123, "https://example.test/run/123"),
+                )
+            )
+            result = setup_auth.main()
+
+        self.assertEqual(result, 0)
+        clear_domain_mock.assert_called_once_with("owner/repo")
 
 
 if __name__ == "__main__":
