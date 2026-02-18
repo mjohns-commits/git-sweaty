@@ -30,7 +30,7 @@ import json
 import webbrowser
 from email.utils import parsedate_to_datetime
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Iterator, Optional, Tuple
 
 from garmin_token_store import (
