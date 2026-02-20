@@ -6571,6 +6571,15 @@
       "year": 2026
     },
     {
+      "date": "2026-02-14",
+      "hour": 8,
+      "name": "Morning Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/17456985964",
+      "year": 2026
+    },
+    {
       "date": "2026-02-15",
       "hour": 11,
       "name": "Zwift - Triple Loops in London- tour de zwift",
@@ -6580,12 +6589,39 @@
       "year": 2026
     },
     {
+      "date": "2026-02-15",
+      "hour": 17,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/17456985960",
+      "year": 2026
+    },
+    {
       "date": "2026-02-16",
       "hour": 19,
       "name": "Zwift - Innsbruck KOM After Party in Innsbruck- tour de zwift",
       "subtype": "VirtualRide",
       "type": "VirtualRide",
       "url": "https://www.strava.com/activities/17422733266",
+      "year": 2026
+    },
+    {
+      "date": "2026-02-17",
+      "hour": 22,
+      "name": "Night Run",
+      "subtype": "Run",
+      "type": "Run",
+      "url": "https://www.strava.com/activities/17456985944",
+      "year": 2026
+    },
+    {
+      "date": "2026-02-18",
+      "hour": 16,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/17456985958",
       "year": 2026
     },
     {
@@ -12502,6 +12538,17 @@
       }
     },
     "2026": {
+      "Run": {
+        "2026-02-17": {
+          "activity_ids": [
+            "17456985944"
+          ],
+          "count": 1,
+          "distance": 3070.5,
+          "elevation_gain": 0.0,
+          "moving_time": 2377.0
+        }
+      },
       "VirtualRide": {
         "2026-01-13": {
           "activity_ids": [
@@ -12674,10 +12721,39 @@
           "elevation_gain": 1168.0,
           "moving_time": 6614.0
         }
+      },
+      "Walk": {
+        "2026-02-14": {
+          "activity_ids": [
+            "17456985964"
+          ],
+          "count": 1,
+          "distance": 2084.3,
+          "elevation_gain": 11.4,
+          "moving_time": 1527.0
+        },
+        "2026-02-15": {
+          "activity_ids": [
+            "17456985960"
+          ],
+          "count": 1,
+          "distance": 2130.6,
+          "elevation_gain": 12.4,
+          "moving_time": 1447.0
+        },
+        "2026-02-18": {
+          "activity_ids": [
+            "17456985958"
+          ],
+          "count": 1,
+          "distance": 2164.5,
+          "elevation_gain": 7.8,
+          "moving_time": 1602.0
+        }
       }
     }
   },
-  "generated_at": "2026-02-20T02:27:51.571897+00:00",
+  "generated_at": "2026-02-20T17:08:30.032939+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
