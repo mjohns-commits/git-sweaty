@@ -9579,5 +9579,18 @@
     "start_date_local": "2026-02-19T18:49:23Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-02-21",
+    "distance": 18563.8,
+    "elevation_gain": 149.0,
+    "id": "17475158437",
+    "moving_time": 2026.0,
+    "name": "Zwift - Race: Stage 1: Zwift Games: Kaze Kicker on Kaze Kicker in Makuri Islands",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-02-21T12:13:28Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]

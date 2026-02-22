@@ -6632,6 +6632,15 @@
       "type": "VirtualRide",
       "url": "https://www.strava.com/activities/17456710963",
       "year": 2026
+    },
+    {
+      "date": "2026-02-21",
+      "hour": 12,
+      "name": "Zwift - Race: Stage 1: Zwift Games: Kaze Kicker on Kaze Kicker in Makuri Islands",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/17475158437",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -12720,6 +12729,15 @@
           "distance": 25928.8,
           "elevation_gain": 1168.0,
           "moving_time": 6614.0
+        },
+        "2026-02-21": {
+          "activity_ids": [
+            "17475158437"
+          ],
+          "count": 1,
+          "distance": 18563.8,
+          "elevation_gain": 149.0,
+          "moving_time": 2026.0
         }
       },
       "Walk": {
@@ -12753,7 +12771,7 @@
       }
     }
   },
-  "generated_at": "2026-02-21T15:51:07.077145+00:00",
+  "generated_at": "2026-02-22T15:53:32.914118+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
