@@ -9605,5 +9605,18 @@
     "start_date_local": "2026-02-23T19:12:36Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-02-24",
+    "distance": 2805.3,
+    "elevation_gain": 0.0,
+    "id": "17513597856",
+    "moving_time": 2626.0,
+    "name": "Evening Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-02-24T18:15:18Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
