@@ -6704,6 +6704,24 @@
       "type": "Run",
       "url": "https://www.strava.com/activities/17703262068",
       "year": 2026
+    },
+    {
+      "date": "2026-03-14",
+      "hour": 16,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/17724131131",
+      "year": 2026
+    },
+    {
+      "date": "2026-03-15",
+      "hour": 10,
+      "name": "Morning Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/17732656245",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -12893,11 +12911,29 @@
           "distance": 2077.0,
           "elevation_gain": 10.0,
           "moving_time": 1861.0
+        },
+        "2026-03-14": {
+          "activity_ids": [
+            "17724131131"
+          ],
+          "count": 1,
+          "distance": 2216.8,
+          "elevation_gain": 11.2,
+          "moving_time": 1862.0
+        },
+        "2026-03-15": {
+          "activity_ids": [
+            "17732656245"
+          ],
+          "count": 1,
+          "distance": 2069.3,
+          "elevation_gain": 9.0,
+          "moving_time": 1472.0
         }
       }
     }
   },
-  "generated_at": "2026-03-14T15:53:17.429188+00:00",
+  "generated_at": "2026-03-15T15:55:17.197741+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
