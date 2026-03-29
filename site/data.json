@@ -6758,6 +6758,15 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/17858436744",
       "year": 2026
+    },
+    {
+      "date": "2026-03-28",
+      "hour": 12,
+      "name": "Zwift - Watopia's Waistband in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/17891789697",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -12909,6 +12918,15 @@
           "distance": 23358.5,
           "elevation_gain": 48.0,
           "moving_time": 2796.0
+        },
+        "2026-03-28": {
+          "activity_ids": [
+            "17891789697"
+          ],
+          "count": 1,
+          "distance": 28545.5,
+          "elevation_gain": 102.0,
+          "moving_time": 3438.0
         }
       },
       "Walk": {
@@ -13005,7 +13023,7 @@
       }
     }
   },
-  "generated_at": "2026-03-28T15:29:02.544013+00:00",
+  "generated_at": "2026-03-29T15:30:09.000351+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
