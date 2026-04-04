@@ -6785,6 +6785,15 @@
       "type": "Run",
       "url": "https://www.strava.com/activities/17932171697",
       "year": 2026
+    },
+    {
+      "date": "2026-04-03",
+      "hour": 12,
+      "name": "Zwift - Mountain Mash in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/17965181122",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -12954,6 +12963,15 @@
           "distance": 28545.5,
           "elevation_gain": 102.0,
           "moving_time": 3438.0
+        },
+        "2026-04-03": {
+          "activity_ids": [
+            "17965181122"
+          ],
+          "count": 1,
+          "distance": 12860.2,
+          "elevation_gain": 383.0,
+          "moving_time": 2117.0
         }
       },
       "Walk": {
@@ -13059,7 +13077,7 @@
       }
     }
   },
-  "generated_at": "2026-04-03T15:37:56.728461+00:00",
+  "generated_at": "2026-04-04T15:30:04.165995+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",

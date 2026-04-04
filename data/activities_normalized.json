@@ -9800,5 +9800,18 @@
     "start_date_local": "2026-03-31T19:53:17Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-03",
+    "distance": 12860.2,
+    "elevation_gain": 383.0,
+    "id": "17965181122",
+    "moving_time": 2117.0,
+    "name": "Zwift - Mountain Mash in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-04-03T12:37:12Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
