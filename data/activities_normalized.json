@@ -9813,5 +9813,18 @@
     "start_date_local": "2026-04-03T12:37:12Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-04-04",
+    "distance": 18667.6,
+    "elevation_gain": 214.0,
+    "id": "17977893340",
+    "moving_time": 2309.0,
+    "name": "Zwift - Loopin Lava",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-04-04T12:12:18Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
