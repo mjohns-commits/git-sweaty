@@ -9826,5 +9826,18 @@
     "start_date_local": "2026-04-04T12:12:18Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-04-06",
+    "distance": 8398.3,
+    "elevation_gain": 29.5,
+    "id": "18001506630",
+    "moving_time": 2127.0,
+    "name": "Grand Rapids",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-06T10:02:23Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
