@@ -9956,5 +9956,31 @@
     "start_date_local": "2026-04-11T15:10:27Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-04-12",
+    "distance": 2151.1,
+    "elevation_gain": 10.6,
+    "id": "18083535646",
+    "moving_time": 1843.0,
+    "name": "Morning Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-04-12T09:54:54Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-12",
+    "distance": 28241.4,
+    "elevation_gain": 67.3,
+    "id": "18084673145",
+    "moving_time": 4108.0,
+    "name": "Grand Rapids / Belmont",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-04-12T14:52:49Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
