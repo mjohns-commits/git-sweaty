@@ -10138,5 +10138,18 @@
     "start_date_local": "2026-05-10T18:32:35Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-05-13",
+    "distance": 14450.7,
+    "elevation_gain": 183.0,
+    "id": "18497764597",
+    "moving_time": 1818.0,
+    "name": "Zwift - Balance Point",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-05-13T19:56:51Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
