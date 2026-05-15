@@ -10151,5 +10151,31 @@
     "start_date_local": "2026-05-13T19:56:51Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-05-14",
+    "distance": 29905.0,
+    "elevation_gain": 166.0,
+    "id": "18511248378",
+    "moving_time": 3576.0,
+    "name": "Zwift - The Magnificent 8 in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-05-14T20:00:40Z",
+    "type": "VirtualRide",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-14",
+    "distance": 2107.9,
+    "elevation_gain": 12.6,
+    "id": "18511249631",
+    "moving_time": 1770.0,
+    "name": "Evening Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-05-14T18:11:42Z",
+    "type": "Walk",
+    "year": 2026
   }
 ]
