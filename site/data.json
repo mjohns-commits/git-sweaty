@@ -7046,6 +7046,60 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/18511249631",
       "year": 2026
+    },
+    {
+      "date": "2026-05-16",
+      "hour": 9,
+      "name": "To the zoo",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18532127233",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-16",
+      "hour": 11,
+      "name": "From the zoo",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18532142528",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-16",
+      "hour": 18,
+      "name": "Evening Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/18535414092",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-16",
+      "hour": 19,
+      "name": "Grand Rapids",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18536124161",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-17",
+      "hour": 8,
+      "name": "Donut run",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18543176560",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-17",
+      "hour": 9,
+      "name": "Morning Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/18544826320",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -12998,6 +13052,26 @@
           "distance": 6030.1,
           "elevation_gain": 10.4,
           "moving_time": 1600.0
+        },
+        "2026-05-16": {
+          "activity_ids": [
+            "18532127233",
+            "18532142528",
+            "18536124161"
+          ],
+          "count": 3,
+          "distance": 37060.8,
+          "elevation_gain": 120.5,
+          "moving_time": 6432.0
+        },
+        "2026-05-17": {
+          "activity_ids": [
+            "18543176560"
+          ],
+          "count": 1,
+          "distance": 9730.9,
+          "elevation_gain": 31.2,
+          "moving_time": 2389.0
         }
       },
       "Run": {
@@ -13571,11 +13645,29 @@
           "distance": 2107.9,
           "elevation_gain": 12.6,
           "moving_time": 1770.0
+        },
+        "2026-05-16": {
+          "activity_ids": [
+            "18535414092"
+          ],
+          "count": 1,
+          "distance": 2100.4,
+          "elevation_gain": 10.2,
+          "moving_time": 1792.0
+        },
+        "2026-05-17": {
+          "activity_ids": [
+            "18544826320"
+          ],
+          "count": 1,
+          "distance": 2600.4,
+          "elevation_gain": 11.2,
+          "moving_time": 2225.0
         }
       }
     }
   },
-  "generated_at": "2026-05-16T15:57:16.305477+00:00",
+  "generated_at": "2026-05-17T15:58:05.377354+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
