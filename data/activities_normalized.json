@@ -10255,5 +10255,18 @@
     "start_date_local": "2026-05-17T09:26:38Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-05-17",
+    "distance": 20294.5,
+    "elevation_gain": 219.0,
+    "id": "18549535921",
+    "moving_time": 2522.0,
+    "name": "Zwift - Jurassic Coast in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-05-17T19:36:39Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]

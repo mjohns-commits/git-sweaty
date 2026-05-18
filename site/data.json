@@ -7100,6 +7100,15 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/18544826320",
       "year": 2026
+    },
+    {
+      "date": "2026-05-17",
+      "hour": 19,
+      "name": "Zwift - Jurassic Coast in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18549535921",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13400,6 +13409,15 @@
           "distance": 29905.0,
           "elevation_gain": 166.0,
           "moving_time": 3576.0
+        },
+        "2026-05-17": {
+          "activity_ids": [
+            "18549535921"
+          ],
+          "count": 1,
+          "distance": 20294.5,
+          "elevation_gain": 219.0,
+          "moving_time": 2522.0
         }
       },
       "Walk": {
@@ -13667,7 +13685,7 @@
       }
     }
   },
-  "generated_at": "2026-05-17T15:58:05.377354+00:00",
+  "generated_at": "2026-05-18T17:28:58.820307+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
