@@ -10268,5 +10268,44 @@
     "start_date_local": "2026-05-17T19:36:39Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-05-18",
+    "distance": 17834.4,
+    "elevation_gain": 316.0,
+    "id": "18562518055",
+    "moving_time": 2624.0,
+    "name": "Zwift - Aurora",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-05-18T21:08:25Z",
+    "type": "VirtualRide",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-18",
+    "distance": 2190.0,
+    "elevation_gain": 10.6,
+    "id": "18562658519",
+    "moving_time": 1950.0,
+    "name": "Evening Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-05-18T18:01:32Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-19",
+    "distance": 1719.7,
+    "elevation_gain": 9.8,
+    "id": "18570415707",
+    "moving_time": 1272.0,
+    "name": "Morning Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-05-19T10:20:10Z",
+    "type": "Walk",
+    "year": 2026
   }
 ]
