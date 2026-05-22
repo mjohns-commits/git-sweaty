@@ -7163,6 +7163,33 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/18586220520",
       "year": 2026
+    },
+    {
+      "date": "2026-05-20",
+      "hour": 18,
+      "name": "Evening Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/18603263875",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-21",
+      "hour": 21,
+      "name": "Zwift - Pacer Group Ride with Maria",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18603221376",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-21",
+      "hour": 14,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/18603263867",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13490,6 +13517,15 @@
           "distance": 24594.5,
           "elevation_gain": 140.0,
           "moving_time": 2864.0
+        },
+        "2026-05-21": {
+          "activity_ids": [
+            "18603221376"
+          ],
+          "count": 1,
+          "distance": 23084.2,
+          "elevation_gain": 88.0,
+          "moving_time": 2418.0
         }
       },
       "Walk": {
@@ -13775,17 +13811,27 @@
         },
         "2026-05-20": {
           "activity_ids": [
-            "18586220520"
+            "18586220520",
+            "18603263875"
+          ],
+          "count": 2,
+          "distance": 3986.2000000000003,
+          "elevation_gain": 5.199999999999999,
+          "moving_time": 2781.0
+        },
+        "2026-05-21": {
+          "activity_ids": [
+            "18603263867"
           ],
           "count": 1,
-          "distance": 2372.3,
-          "elevation_gain": 2.4,
-          "moving_time": 1456.0
+          "distance": 2854.3,
+          "elevation_gain": 17.8,
+          "moving_time": 2099.0
         }
       }
     }
   },
-  "generated_at": "2026-05-21T17:30:28.843423+00:00",
+  "generated_at": "2026-05-22T17:07:14.282475+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
