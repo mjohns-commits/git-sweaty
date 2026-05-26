@@ -7208,6 +7208,42 @@
       "type": "Ride",
       "url": "https://www.strava.com/activities/18639443055",
       "year": 2026
+    },
+    {
+      "date": "2026-05-25",
+      "hour": 19,
+      "name": "Zwift - The Classic in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18655053938",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-25",
+      "hour": 20,
+      "name": "Zwift - Silk Road",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18655273441",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-25",
+      "hour": 9,
+      "name": "Morning Ride",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18662915408",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-26",
+      "hour": 10,
+      "name": "Morning Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/18662915445",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13189,6 +13225,15 @@
           "distance": 3917.7,
           "elevation_gain": 35.0,
           "moving_time": 970.0
+        },
+        "2026-05-25": {
+          "activity_ids": [
+            "18662915408"
+          ],
+          "count": 1,
+          "distance": 3892.4,
+          "elevation_gain": 34.0,
+          "moving_time": 879.0
         }
       },
       "Run": {
@@ -13553,6 +13598,16 @@
           "distance": 23084.2,
           "elevation_gain": 88.0,
           "moving_time": 2418.0
+        },
+        "2026-05-25": {
+          "activity_ids": [
+            "18655053938",
+            "18655273441"
+          ],
+          "count": 2,
+          "distance": 19240.199999999997,
+          "elevation_gain": 229.0,
+          "moving_time": 2591.0
         }
       },
       "Walk": {
@@ -13863,11 +13918,20 @@
           "distance": 1941.4,
           "elevation_gain": 5.0,
           "moving_time": 1462.0
+        },
+        "2026-05-26": {
+          "activity_ids": [
+            "18662915445"
+          ],
+          "count": 1,
+          "distance": 1278.1,
+          "elevation_gain": 2.6,
+          "moving_time": 825.0
         }
       }
     }
   },
-  "generated_at": "2026-05-25T17:05:53.791869+00:00",
+  "generated_at": "2026-05-26T17:55:24.237192+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
