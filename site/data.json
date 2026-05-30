@@ -7271,6 +7271,24 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/18703186892",
       "year": 2026
+    },
+    {
+      "date": "2026-05-29",
+      "hour": 19,
+      "name": "Zwift - Flat Route in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18708503095",
+      "year": 2026
+    },
+    {
+      "date": "2026-05-29",
+      "hour": 20,
+      "name": "Zwift - Aurora",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18708757913",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13635,6 +13653,16 @@
           "distance": 19240.199999999997,
           "elevation_gain": 229.0,
           "moving_time": 2591.0
+        },
+        "2026-05-29": {
+          "activity_ids": [
+            "18708503095",
+            "18708757913"
+          ],
+          "count": 2,
+          "distance": 25828.1,
+          "elevation_gain": 169.0,
+          "moving_time": 3218.0
         }
       },
       "Walk": {
@@ -13977,7 +14005,7 @@
       }
     }
   },
-  "generated_at": "2026-05-29T18:11:35.531387+00:00",
+  "generated_at": "2026-05-30T16:03:22.874435+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",

@@ -10502,5 +10502,31 @@
     "start_date_local": "2026-05-29T10:24:39Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-05-29",
+    "distance": 11049.0,
+    "elevation_gain": 61.0,
+    "id": "18708503095",
+    "moving_time": 1393.0,
+    "name": "Zwift - Flat Route in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-05-29T19:57:13Z",
+    "type": "VirtualRide",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-29",
+    "distance": 14779.1,
+    "elevation_gain": 108.0,
+    "id": "18708757913",
+    "moving_time": 1825.0,
+    "name": "Zwift - Aurora",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-05-29T20:20:57Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
