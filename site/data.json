@@ -7298,6 +7298,15 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/18730092227",
       "year": 2026
+    },
+    {
+      "date": "2026-06-01",
+      "hour": 19,
+      "name": "Zwift - Two Bridges Loop in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/18749373215",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13672,6 +13681,15 @@
           "distance": 25828.1,
           "elevation_gain": 169.0,
           "moving_time": 3218.0
+        },
+        "2026-06-01": {
+          "activity_ids": [
+            "18749373215"
+          ],
+          "count": 1,
+          "distance": 22329.1,
+          "elevation_gain": 254.0,
+          "moving_time": 2955.0
         }
       },
       "Walk": {
@@ -14023,7 +14041,7 @@
       }
     }
   },
-  "generated_at": "2026-06-01T19:54:57.599544+00:00",
+  "generated_at": "2026-06-02T18:38:08.827517+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",

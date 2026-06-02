@@ -10541,5 +10541,18 @@
     "start_date_local": "2026-05-31T09:34:11Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-06-01",
+    "distance": 22329.1,
+    "elevation_gain": 254.0,
+    "id": "18749373215",
+    "moving_time": 2955.0,
+    "name": "Zwift - Two Bridges Loop in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-06-01T19:47:07Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
