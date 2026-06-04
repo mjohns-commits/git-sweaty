@@ -10554,5 +10554,31 @@
     "start_date_local": "2026-06-01T19:47:07Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-06-03",
+    "distance": 2178.1,
+    "elevation_gain": 11.6,
+    "id": "18776443521",
+    "moving_time": 1880.0,
+    "name": "Afternoon Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-06-03T16:56:44Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-03",
+    "distance": 22254.2,
+    "elevation_gain": 99.0,
+    "id": "18777464878",
+    "moving_time": 2523.0,
+    "name": "Zwift - Temple Trek in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-06-03T19:33:55Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
