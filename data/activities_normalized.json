@@ -10580,5 +10580,31 @@
     "start_date_local": "2026-06-03T19:33:55Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-06-06",
+    "distance": 2928.1,
+    "elevation_gain": 18.4,
+    "id": "18816285659",
+    "moving_time": 2522.0,
+    "name": "Afternoon Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-06-06T16:45:16Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-06-06",
+    "distance": 23273.8,
+    "elevation_gain": 66.5,
+    "id": "18816883388",
+    "moving_time": 3397.0,
+    "name": "Grand Rapids",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-06-06T19:28:11Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]

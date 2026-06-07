@@ -7325,6 +7325,24 @@
       "type": "VirtualRide",
       "url": "https://www.strava.com/activities/18777464878",
       "year": 2026
+    },
+    {
+      "date": "2026-06-06",
+      "hour": 16,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/18816285659",
+      "year": 2026
+    },
+    {
+      "date": "2026-06-06",
+      "hour": 19,
+      "name": "Grand Rapids",
+      "subtype": "Ride",
+      "type": "Ride",
+      "url": "https://www.strava.com/activities/18816883388",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13315,6 +13333,15 @@
           "distance": 3892.4,
           "elevation_gain": 34.0,
           "moving_time": 879.0
+        },
+        "2026-06-06": {
+          "activity_ids": [
+            "18816883388"
+          ],
+          "count": 1,
+          "distance": 23273.8,
+          "elevation_gain": 66.5,
+          "moving_time": 3397.0
         }
       },
       "Run": {
@@ -14073,11 +14100,20 @@
           "distance": 2178.1,
           "elevation_gain": 11.6,
           "moving_time": 1880.0
+        },
+        "2026-06-06": {
+          "activity_ids": [
+            "18816285659"
+          ],
+          "count": 1,
+          "distance": 2928.1,
+          "elevation_gain": 18.4,
+          "moving_time": 2522.0
         }
       }
     }
   },
-  "generated_at": "2026-06-06T16:04:46.308350+00:00",
+  "generated_at": "2026-06-07T16:13:31.124383+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
