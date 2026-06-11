@@ -10671,5 +10671,18 @@
     "start_date_local": "2026-06-09T12:19:08Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-06-09",
+    "distance": 2147.0,
+    "elevation_gain": 17.2,
+    "id": "18873329113",
+    "moving_time": 1783.0,
+    "name": "Afternoon Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-06-09T14:57:18Z",
+    "type": "Walk",
+    "year": 2026
   }
 ]
