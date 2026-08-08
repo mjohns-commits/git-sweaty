@@ -7469,6 +7469,60 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/19117467969",
       "year": 2026
+    },
+    {
+      "date": "2026-08-04",
+      "hour": 8,
+      "name": "Morning Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/19601677963",
+      "year": 2026
+    },
+    {
+      "date": "2026-08-05",
+      "hour": 17,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/19620069206",
+      "year": 2026
+    },
+    {
+      "date": "2026-08-06",
+      "hour": 8,
+      "name": "Morning Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/19629493690",
+      "year": 2026
+    },
+    {
+      "date": "2026-08-06",
+      "hour": 19,
+      "name": "Zwift - Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/19634383327",
+      "year": 2026
+    },
+    {
+      "date": "2026-08-06",
+      "hour": 17,
+      "name": "Afternoon Walk",
+      "subtype": "Walk",
+      "type": "Walk",
+      "url": "https://www.strava.com/activities/19635402859",
+      "year": 2026
+    },
+    {
+      "date": "2026-08-08",
+      "hour": 8,
+      "name": "Zwift - INEOS Grenadiers | The Cafe Ride",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/19654133077",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -13908,6 +13962,24 @@
           "distance": 21711.9,
           "elevation_gain": 184.0,
           "moving_time": 2864.0
+        },
+        "2026-08-06": {
+          "activity_ids": [
+            "19634383327"
+          ],
+          "count": 1,
+          "distance": 29190.2,
+          "elevation_gain": 133.0,
+          "moving_time": 3719.0
+        },
+        "2026-08-08": {
+          "activity_ids": [
+            "19654133077"
+          ],
+          "count": 1,
+          "distance": 16836.6,
+          "elevation_gain": 72.0,
+          "moving_time": 2057.0
         }
       },
       "Walk": {
@@ -14355,11 +14427,39 @@
           "distance": 2144.7,
           "elevation_gain": 14.0,
           "moving_time": 1758.0
+        },
+        "2026-08-04": {
+          "activity_ids": [
+            "19601677963"
+          ],
+          "count": 1,
+          "distance": 2147.9,
+          "elevation_gain": 6.4,
+          "moving_time": 1754.0
+        },
+        "2026-08-05": {
+          "activity_ids": [
+            "19620069206"
+          ],
+          "count": 1,
+          "distance": 2107.1,
+          "elevation_gain": 8.0,
+          "moving_time": 1681.0
+        },
+        "2026-08-06": {
+          "activity_ids": [
+            "19629493690",
+            "19635402859"
+          ],
+          "count": 2,
+          "distance": 3719.1,
+          "elevation_gain": 15.0,
+          "moving_time": 2953.0
         }
       }
     }
   },
-  "generated_at": "2026-07-03T16:23:24.163693+00:00",
+  "generated_at": "2026-08-08T15:26:42.432630+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
