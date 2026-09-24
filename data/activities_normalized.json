@@ -11139,5 +11139,31 @@
     "start_date_local": "2026-09-22T18:55:54Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-09-23",
+    "distance": 16819.1,
+    "elevation_gain": 135.0,
+    "id": "20301909547",
+    "moving_time": 2048.0,
+    "name": "Zwift - The Cafe RideZwift The Cafe Ride",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-09-23T15:43:20Z",
+    "type": "VirtualRide",
+    "year": 2026
+  },
+  {
+    "date": "2026-09-23",
+    "distance": 2203.4,
+    "elevation_gain": 15.4,
+    "id": "20304572414",
+    "moving_time": 2051.0,
+    "name": "Afternoon Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-09-23T17:36:15Z",
+    "type": "Walk",
+    "year": 2026
   }
 ]
