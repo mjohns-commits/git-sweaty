@@ -11178,5 +11178,83 @@
     "start_date_local": "2026-09-24T18:03:54Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-09-27",
+    "distance": 2247.4,
+    "elevation_gain": 16.8,
+    "id": "20369378629",
+    "moving_time": 1962.0,
+    "name": "Afternoon Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-09-27T16:19:22Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-09-27",
+    "distance": 3816.4,
+    "elevation_gain": 25.8,
+    "id": "20369378695",
+    "moving_time": 1096.0,
+    "name": "Afternoon Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-09-27T15:49:00Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-09-27",
+    "distance": 4123.3,
+    "elevation_gain": 9.0,
+    "id": "20369378697",
+    "moving_time": 1000.0,
+    "name": "Afternoon Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-09-27T14:22:12Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-09-28",
+    "distance": 3072.2,
+    "elevation_gain": 24.0,
+    "id": "20369377392",
+    "moving_time": 861.0,
+    "name": "Afternoon Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-09-28T14:38:15Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-09-28",
+    "distance": 2433.6,
+    "elevation_gain": 15.0,
+    "id": "20369378309",
+    "moving_time": 1984.0,
+    "name": "Morning Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-09-28T10:03:07Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-09-28",
+    "distance": 2818.0,
+    "elevation_gain": 14.8,
+    "id": "20369378319",
+    "moving_time": 614.0,
+    "name": "Afternoon Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-09-28T13:59:21Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
