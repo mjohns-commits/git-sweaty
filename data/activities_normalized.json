@@ -11282,5 +11282,44 @@
     "start_date_local": "2026-10-02T06:39:54Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-10-03",
+    "distance": 3936.8,
+    "elevation_gain": 23.2,
+    "id": "20455262380",
+    "moving_time": 3953.0,
+    "name": "Morning Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-10-03T10:57:06Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-10-04",
+    "distance": 2010.1,
+    "elevation_gain": 12.2,
+    "id": "20455262345",
+    "moving_time": 1728.0,
+    "name": "Morning Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-10-04T09:51:17Z",
+    "type": "Walk",
+    "year": 2026
+  },
+  {
+    "date": "2026-10-05",
+    "distance": 2228.4,
+    "elevation_gain": 15.4,
+    "id": "20465940682",
+    "moving_time": 1879.0,
+    "name": "Afternoon Walk",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-10-05T16:47:04Z",
+    "type": "Walk",
+    "year": 2026
   }
 ]
