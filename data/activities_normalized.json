@@ -11321,5 +11321,18 @@
     "start_date_local": "2026-10-05T16:47:04Z",
     "type": "Walk",
     "year": 2026
+  },
+  {
+    "date": "2026-10-05",
+    "distance": 13046.8,
+    "elevation_gain": 148.0,
+    "id": "20467333507",
+    "moving_time": 1677.0,
+    "name": "Zwift - Loop de Loop in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-10-05T19:23:38Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
