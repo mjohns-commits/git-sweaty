@@ -11360,5 +11360,18 @@
     "start_date_local": "2026-10-07T20:07:45Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-10-08",
+    "distance": 7886.6,
+    "elevation_gain": 309.0,
+    "id": "20509551286",
+    "moving_time": 1673.0,
+    "name": "Zwift - Oh Hill No in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-10-08T20:00:18Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
