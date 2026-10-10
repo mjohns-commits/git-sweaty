@@ -11373,5 +11373,18 @@
     "start_date_local": "2026-10-08T20:00:18Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-10-09",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "20525077878",
+    "moving_time": 635.0,
+    "name": "Apple Fitness+ Core",
+    "raw_activity_type": "Workout",
+    "raw_type": "Workout",
+    "start_date_local": "2026-10-09T18:59:54Z",
+    "type": "Workout",
+    "year": 2026
   }
 ]
