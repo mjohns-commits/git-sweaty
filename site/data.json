@@ -7901,6 +7901,15 @@
       "type": "Walk",
       "url": "https://www.strava.com/activities/20576629918",
       "year": 2026
+    },
+    {
+      "date": "2026-10-14",
+      "hour": 19,
+      "name": "Zwift - Downtown Eruption in Watopia",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/20589289944",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14452,6 +14461,15 @@
           "distance": 7886.6,
           "elevation_gain": 309.0,
           "moving_time": 1673.0
+        },
+        "2026-10-14": {
+          "activity_ids": [
+            "20589289944"
+          ],
+          "count": 1,
+          "distance": 20590.2,
+          "elevation_gain": 281.0,
+          "moving_time": 2703.0
         }
       },
       "Walk": {
@@ -15177,7 +15195,7 @@
       }
     }
   },
-  "generated_at": "2026-10-14T19:10:07.611526+00:00",
+  "generated_at": "2026-10-15T18:52:25.555991+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
