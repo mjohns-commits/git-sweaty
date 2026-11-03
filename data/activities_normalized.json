@@ -11529,5 +11529,18 @@
     "start_date_local": "2026-11-01T08:50:42Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-11-02",
+    "distance": 14010.9,
+    "elevation_gain": 251.0,
+    "id": "20836658097",
+    "moving_time": 1958.0,
+    "name": "Zwift - Glen Garry Wilds in Video",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-11-02T19:17:11Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
