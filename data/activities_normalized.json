@@ -11620,5 +11620,31 @@
     "start_date_local": "2026-11-16T19:05:33Z",
     "type": "VirtualRide",
     "year": 2026
+  },
+  {
+    "date": "2026-11-17",
+    "distance": 16666.6,
+    "elevation_gain": 54.0,
+    "id": "21028895059",
+    "moving_time": 1964.0,
+    "name": "Zwift - Caldera Coaster in Watopia",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-11-17T19:27:12Z",
+    "type": "VirtualRide",
+    "year": 2026
+  },
+  {
+    "date": "2026-11-18",
+    "distance": 17961.2,
+    "elevation_gain": 136.0,
+    "id": "21039623732",
+    "moving_time": 2303.0,
+    "name": "Zwift - Anaerobic Surge Stack",
+    "raw_activity_type": "VirtualRide",
+    "raw_type": "VirtualRide",
+    "start_date_local": "2026-11-18T15:36:49Z",
+    "type": "VirtualRide",
+    "year": 2026
   }
 ]
