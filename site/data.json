@@ -8063,6 +8063,15 @@
       "type": "VirtualRide",
       "url": "https://www.strava.com/activities/21039623732",
       "year": 2026
+    },
+    {
+      "date": "2026-11-21",
+      "hour": 19,
+      "name": "Zwift - Instant Inferno",
+      "subtype": "VirtualRide",
+      "type": "VirtualRide",
+      "url": "https://www.strava.com/activities/21077388287",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -14687,6 +14696,15 @@
           "distance": 17961.2,
           "elevation_gain": 136.0,
           "moving_time": 2303.0
+        },
+        "2026-11-21": {
+          "activity_ids": [
+            "21077388287"
+          ],
+          "count": 1,
+          "distance": 9940.5,
+          "elevation_gain": 130.0,
+          "moving_time": 1150.0
         }
       },
       "Walk": {
@@ -15493,7 +15511,7 @@
       }
     }
   },
-  "generated_at": "2026-11-21T20:46:08.652837+00:00",
+  "generated_at": "2026-11-22T20:55:26.110562+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/37571259",
   "repo": "mjohns-commits/git-sweaty",
